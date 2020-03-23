@@ -8,7 +8,7 @@
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="516dp"
+        android:layout_width="734dp"
         android:layout_height="237dp"
         android:addStatesFromChildren="true"
 
@@ -47,6 +47,11 @@
                 style="@style/buttonStyle2"
                 android:text="@string/buttonDivide" />
 
+            <Button
+                android:id="@+id/buttonLog"
+                style="@style/buttonStyle3"
+                android:text="@string/buttonLog" />
+
         </TableRow>
 
         <TableRow
@@ -57,22 +62,30 @@
             <Button
                 android:id="@+id/button7"
                 style="@style/buttonStyle1"
+                android:layout_height="wrap_content"
                 android:text="@string/button7" />
 
             <Button
                 android:id="@+id/button8"
                 style="@style/buttonStyle1"
+                android:layout_height="wrap_content"
                 android:text="@string/button8" />
 
             <Button
                 android:id="@+id/button9"
                 style="@style/buttonStyle1"
+                android:layout_height="wrap_content"
                 android:text="@string/button9" />
 
             <Button
                 android:id="@+id/buttonMultiply"
                 style="@style/buttonStyle2"
                 android:text="@string/buttonMultiply" />
+
+            <Button
+                android:id="@+id/buttonSIL"
+                style="@style/buttonStyle3"
+                android:text="@string/buttonSIL" />
 
         </TableRow>
 
@@ -100,6 +113,11 @@
                 android:id="@+id/buttonMinus"
                 style="@style/buttonStyle2"
                 android:text="@string/buttonMinus" />
+
+            <Button
+                android:id="@+id/buttonSqrt"
+                style="@style/buttonStyle3"
+                android:text="@string/buttonSqrt" />
         </TableRow>
 
         <TableRow
@@ -127,6 +145,11 @@
                 style="@style/buttonStyle2"
                 android:text="@string/buttonPlus" />
 
+            <Button
+                android:id="@+id/button33"
+                style="@style/buttonStyle3"
+                android:text="@string/Button33" />
+
         </TableRow>
 
         <TableRow
@@ -137,6 +160,8 @@
             <Button
                 android:id="@+id/button0"
                 style="@style/buttonStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:text="@string/_0" />
 
             <Button
@@ -155,6 +180,11 @@
                 style="@style/buttonStyle2"
                 android:text="@string/equals" />
 
+            <Button
+                android:id="@+id/buttonSQUARE"
+                style="@style/buttonStyle3"
+                android:text="@string/buttonSquare" />
+
         </TableRow>
 
     </TableLayout>
@@ -163,13 +193,13 @@
         android:id="@+id/numberTextView"
         android:layout_width="90dp"
         android:layout_height="102dp"
-        android:text="0"
+        android:text="@string/_0"
         android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.921"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.556" />
+        app:layout_constraintVertical_bias="0.666" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

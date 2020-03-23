@@ -21,4 +21,9 @@
     <string name="buttonPlusMinus">+/-</string>
     <string name="buttonPercent">%</string>
     <string name="buttonDivide">/</string>
+    <string name="buttonSquare">x^2</string>
+    <string name="Button33">x^3</string>
+    <string name="buttonSqrt">sqrt(x)</string>
+    <string name="buttonLog">Log10</string>
+    <string name="buttonSIL">!</string>
 </resources>

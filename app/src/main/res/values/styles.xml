@@ -24,4 +24,12 @@
         <item name="android:layout_margin">0dp</item>
     </style>
 
+    <style name="buttonStyle3">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#009688</item>
+        <item name="android:textColor">@android:color/white</item>
+
+    </style>
+
 </resources>
