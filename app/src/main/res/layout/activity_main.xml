@@ -148,7 +148,7 @@
                 android:text="@string/nic" />
 
             <Button
-                android:id="@+id/button."
+                android:id="@+id/dot"
                 style="@style/buttonStyle1"
                 android:text="@string/dot" />
 
@@ -163,10 +163,9 @@
 
     <TextView
         android:id="@+id/numberTextView"
-        android:layout_width="47dp"
-        android:layout_height="61dp"
+        android:layout_width="305dp"
+        android:layout_height="57dp"
         android:layout_marginTop="160dp"
-        android:text="0"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
