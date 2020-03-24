@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/numberTextView"
+        android:layout_width="305dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="160dp"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="292dp"
@@ -134,7 +145,8 @@
         <TableRow
             android:id="@+id/tableRow1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:clickable="false">
 
             <Button
                 android:id="@+id/button0"
@@ -161,15 +173,49 @@
 
     </TableLayout>
 
-    <TextView
-        android:id="@+id/numberTextView"
-        android:layout_width="305dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="160dp"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/buttonSQUARE"
+        style="@style/buttonStyle3"
+        android:layout_width="2dp"
+        android:layout_height="2dp"
+        android:text="@string/buttonSquare"
+        tools:layout_editor_absoluteX="-34dp"
+        tools:layout_editor_absoluteY="-4dp" />
+
+    <Button
+        android:id="@+id/button33"
+        style="@style/buttonStyle3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/Button33"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-23dp" />
+
+    <Button
+        android:id="@+id/buttonSqrt"
+        style="@style/buttonStyle3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/buttonSqrt"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-21dp" />
+
+    <Button
+        android:id="@+id/buttonSIL"
+        style="@style/buttonStyle3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/buttonSIL"
+        tools:layout_editor_absoluteX="236dp"
+        tools:layout_editor_absoluteY="-30dp" />
+
+    <Button
+        android:id="@+id/buttonLog"
+        style="@style/buttonStyle3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/buttonLog"
+        tools:layout_editor_absoluteX="363dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

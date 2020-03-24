@@ -10,12 +10,13 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     double ValueOne , ValueTwo ;
-    boolean mAddition , mSubtract ,mMultiplication ,mDivision, mComa,mSquare;
+    boolean mAddition , mSubtract ,mMultiplication ,mDivision, mComa,mPer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         final Button b0=findViewById(R.id.button0);
         final Button b1=findViewById(R.id.button1);
         final Button b2=findViewById(R.id.button2);
@@ -190,37 +191,90 @@ public class MainActivity extends AppCompatActivity {
                 mComa=false;
             }
         });
+        sign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!text.getText().toString().equals("0")) {
+                    ValueOne = Double.parseDouble(text.getText().toString()) * (-1);
+                    text.setText(String.valueOf(ValueOne));
+                }
+            }
+        });
+
         to2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ValueOne = Double.parseDouble(text.getText().toString());
-                text.setText(String.valueOf(ValueOne*ValueOne));
+                    ValueOne = Double.parseDouble(text.getText().toString());
+                    text.setText(String.valueOf(ValueOne*ValueOne));
+
             }
         });
+        to3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ValueOne = Double.parseDouble(text.getText().toString());
+                text.setText(String.valueOf(Math.pow(ValueOne,3)));
+
+            }
+        });
+
+        per.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ValueOne = Double.parseDouble(text.getText().toString());
+                mPer = true ;
+                text.setText("0");
+                mComa=false;
+            }
+        });
+        sqrt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ValueOne = Double.parseDouble(text.getText().toString());
+                text.setText(String.valueOf(Math.sqrt(ValueOne)));
+            }
+        });
+        log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ValueOne = Double.parseDouble(text.getText().toString());
+                text.setText(String.valueOf(Math.log10(ValueOne)));
+            }
+        });
+
         equals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ValueTwo = Double.parseDouble(text.getText().toString());
 
-                if (mAddition == true){
+                if (mAddition){
                     text.setText(String.valueOf(ValueOne+ValueTwo));
                     mAddition=false;
+                    mComa = true;
                 }
 
 
-                if (mSubtract == true){
+                if (mSubtract){
                     text.setText(String.valueOf(ValueOne-ValueTwo));
                     mSubtract=false;
+                    mComa = true;
                 }
 
-                if (mMultiplication == true){
+                if (mMultiplication){
                     text.setText(String.valueOf(ValueOne*ValueTwo));
                     mMultiplication=false;
+                    mComa = true;
                 }
 
-                if (mDivision == true){
+                if (mDivision){
                     text.setText(String.valueOf(ValueOne/ValueTwo));
                     mDivision=false;
+                    mComa = true;
+                }
+                if(mPer){
+                    text.setText(String.valueOf(ValueOne%ValueTwo));
+                    mPer=false;
+                    mComa = true;
                 }
             }
         });
@@ -234,13 +288,14 @@ public class MainActivity extends AppCompatActivity {
                 mDivision=false;
                 mMultiplication=false;
                 mSubtract=false;
+                mPer=false;
             }
         });
 
         dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mComa==false) {
+                if(!mComa) {
                     text.append(".");
                     mComa = true;
                 }
