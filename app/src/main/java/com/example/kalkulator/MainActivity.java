@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
     double ValueOne, ValueTwo;
     Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, dot, equals, to3, sqrt, to2, div, ac, sil, per, plus, min, sign, log, mul;
     TextView textDown, textUp;
@@ -23,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt("opNumber",op);
         outState.putDouble("valueOne",ValueOne);
         outState.putDouble("valueTwo",ValueTwo);
-
     }
     protected void onRestoreInstanceState(Bundle savedInstanceState){
         textDown.setText(savedInstanceState.getString("tekstDolny"));
@@ -32,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
         ValueOne=savedInstanceState.getDouble("valueOne");
         ValueTwo=savedInstanceState.getDouble("valueTwo");
     }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
