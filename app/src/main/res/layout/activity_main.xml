@@ -4,39 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:measureWithLargestChild="true"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/numberTextView"
-        android:layout_width="305dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="160dp"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="292dp"
-        android:layout_height="240dp"
+        android:layout_width="317dp"
+        android:layout_height="214dp"
 
         android:addStatesFromChildren="true"
         android:shrinkColumns="*"
         android:stretchColumns="*"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberTextView"
-        app:layout_constraintVertical_bias="0.892">
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <TableRow
             android:id="@+id/tableRow5"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
 
             <Button
@@ -64,7 +53,8 @@
         <TableRow
             android:id="@+id/tableRow4"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/button7"
@@ -91,7 +81,8 @@
         <TableRow
             android:id="@+id/tableRow3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/button4"
@@ -117,7 +108,8 @@
         <TableRow
             android:id="@+id/tableRow2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/button1"
@@ -146,7 +138,7 @@
             android:id="@+id/tableRow1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clickable="false">
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/button0"
@@ -173,49 +165,33 @@
 
     </TableLayout>
 
-    <Button
-        android:id="@+id/buttonSQUARE"
-        style="@style/buttonStyle3"
-        android:layout_width="2dp"
-        android:layout_height="2dp"
-        android:text="@string/buttonSquare"
-        tools:layout_editor_absoluteX="-34dp"
-        tools:layout_editor_absoluteY="-4dp" />
+    <TextView
+        android:id="@+id/secondNumber"
+        android:layout_width="323dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="65dp"
+        android:gravity="center"
+        android:textColor="#818181"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/numberTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button33"
-        style="@style/buttonStyle3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/Button33"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-23dp" />
 
-    <Button
-        android:id="@+id/buttonSqrt"
-        style="@style/buttonStyle3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/buttonSqrt"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="-21dp" />
-
-    <Button
-        android:id="@+id/buttonSIL"
-        style="@style/buttonStyle3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/buttonSIL"
-        tools:layout_editor_absoluteX="236dp"
-        tools:layout_editor_absoluteY="-30dp" />
-
-    <Button
-        android:id="@+id/buttonLog"
-        style="@style/buttonStyle3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/buttonLog"
-        tools:layout_editor_absoluteX="363dp" />
+    <TextView
+        android:id="@+id/numberTextView"
+        android:layout_width="330dp"
+        android:layout_height="171dp"
+        android:background="#DADADA"
+        android:gravity="center"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.986" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

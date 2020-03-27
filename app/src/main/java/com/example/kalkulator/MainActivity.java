@@ -2,6 +2,8 @@ package com.example.kalkulator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,48 +11,73 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    double ValueOne , ValueTwo ;
-    boolean mAddition , mSubtract ,mMultiplication ,mDivision, mComa,mPer;
+    double ValueOne, ValueTwo;
+    Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, dot, equals, to3, sqrt, to2, div, ac, sil, per, plus, min, sign, log, mul;
+    TextView textDown, textUp;
+    int op;
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+        outState.putString("tekstDolny",textDown.getText().toString());
+        outState.putString("tekstGorny",textUp.getText().toString());
+        outState.putInt("opNumber",op);
+        outState.putDouble("valueOne",ValueOne);
+        outState.putDouble("valueTwo",ValueTwo);
+
+    }
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
+        textDown.setText(savedInstanceState.getString("tekstDolny"));
+        textUp.setText(savedInstanceState.getString("tekstGorny"));
+        op=savedInstanceState.getInt("opNumber");
+        ValueOne=savedInstanceState.getDouble("valueOne");
+        ValueTwo=savedInstanceState.getDouble("valueTwo");
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        b0 = findViewById(R.id.button0);
+        b1 = findViewById(R.id.button1);
+        b2 = findViewById(R.id.button2);
+        b3 = findViewById(R.id.button3);
+        b4 = findViewById(R.id.button4);
+        b5 = findViewById(R.id.button5);
+        b6 = findViewById(R.id.button6);
+        b7 = findViewById(R.id.button7);
+        b8 = findViewById(R.id.button8);
+        b9 = findViewById(R.id.button9);
+        dot = findViewById(R.id.dot);
+        equals = findViewById(R.id.buttonEquals);
+        to3 = findViewById(R.id.button33);
+        sqrt = findViewById(R.id.buttonSqrt);
+        to2 = findViewById(R.id.buttonSQUARE);
+        div = findViewById(R.id.buttonDivide);
+        ac = findViewById(R.id.buttonAC);
+        sil = findViewById(R.id.buttonSIL);
+        per = findViewById(R.id.buttonPercent);
+        plus = findViewById(R.id.buttonPlus);
+        min = findViewById(R.id.buttonMinus);
+        sign = findViewById(R.id.buttonPlusMinus);
+        log = findViewById(R.id.buttonLog);
+        mul = findViewById(R.id.buttonMultiply);
+        textDown = findViewById(R.id.numberTextView);
+        textUp = findViewById(R.id.secondNumber);
+        portraitButtons();
+        if(getResources().getConfiguration().orientation== Configuration.ORIENTATION_LANDSCAPE){
+            landscapeButtons();
+        }
+    }
 
-        final Button b0=findViewById(R.id.button0);
-        final Button b1=findViewById(R.id.button1);
-        final Button b2=findViewById(R.id.button2);
-        final Button b3=findViewById(R.id.button3);
-        final Button b4=findViewById(R.id.button4);
-        final Button b5=findViewById(R.id.button5);
-        final Button b6=findViewById(R.id.button6);
-        final Button b7=findViewById(R.id.button7);
-        final Button b8=findViewById(R.id.button8);
-        final Button b9=findViewById(R.id.button9);
-        final Button dot=findViewById(R.id.dot);
-        final Button equals=findViewById(R.id.buttonEquals);
-        final Button to3=findViewById(R.id.button33);
-        final Button sqrt=findViewById(R.id.buttonSqrt);
-        final Button to2=findViewById(R.id.buttonSQUARE);
-        final Button div=findViewById(R.id.buttonDivide);
-        final Button ac=findViewById(R.id.buttonAC);
-        final Button sil=findViewById(R.id.buttonSIL);
-        final Button per=findViewById(R.id.buttonPercent);
-        final Button plus=findViewById(R.id.buttonPlus);
-        final Button min=findViewById(R.id.buttonMinus);
-        final Button sign=findViewById(R.id.buttonPlusMinus);
-        final Button log=findViewById(R.id.buttonLog);
-        final Button mul=findViewById(R.id.buttonMultiply);
-        final TextView text=findViewById(R.id.numberTextView);
-        text.setText("0");
-
+    private void portraitButtons() {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(text.getText().toString().equals("0")){
-                text.setText("1");}
-                else{
-                    text.append("1");
+                if (textDown.getText().toString().equals("0")) {
+                    textDown.setText("1");
+                } else {
+                    textDown.append("1");
                 }
             }
         });
@@ -58,10 +85,10 @@ public class MainActivity extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(text.getText().toString().equals("0")){
-                    text.setText("2");}
-                else{
-                    text.append("2");
+                if (textDown.getText().toString().equals("0")) {
+                    textDown.setText("2");
+                } else {
+                    textDown.append("2");
                 }
             }
         });
@@ -69,10 +96,10 @@ public class MainActivity extends AppCompatActivity {
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(text.getText().toString().equals("0")){
-                    text.setText("3");}
-                else{
-                    text.append("3");
+                if (textDown.getText().toString().equals("0")) {
+                    textDown.setText("3");
+                } else {
+                    textDown.append("3");
                 }
             }
         });
@@ -80,10 +107,10 @@ public class MainActivity extends AppCompatActivity {
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(text.getText().toString().equals("0")){
-                    text.setText("4");}
-                else{
-                    text.append("4");
+                if (textDown.getText().toString().equals("0")) {
+                    textDown.setText("4");
+                } else {
+                    textDown.append("4");
                 }
             }
         });
@@ -91,10 +118,10 @@ public class MainActivity extends AppCompatActivity {
         b5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(text.getText().toString().equals("0")){
-                    text.setText("5");}
-                else{
-                    text.append("5");
+                if (textDown.getText().toString().equals("0")) {
+                    textDown.setText("5");
+                } else {
+                    textDown.append("5");
                 }
             }
         });
@@ -102,10 +129,10 @@ public class MainActivity extends AppCompatActivity {
         b6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(text.getText().toString().equals("0")){
-                    text.setText("6");}
-                else{
-                    text.append("6");
+                if (textDown.getText().toString().equals("0")) {
+                    textDown.setText("6");
+                } else {
+                    textDown.append("6");
                 }
             }
         });
@@ -113,10 +140,10 @@ public class MainActivity extends AppCompatActivity {
         b7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(text.getText().toString().equals("0")){
-                    text.setText("7");}
-                else{
-                    text.append("7");
+                if (textDown.getText().toString().equals("0")) {
+                    textDown.setText("7");
+                } else {
+                    textDown.append("7");
                 }
             }
         });
@@ -124,10 +151,10 @@ public class MainActivity extends AppCompatActivity {
         b8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(text.getText().toString().equals("0")){
-                    text.setText("8");}
-                else{
-                    text.append("8");
+                if (textDown.getText().toString().equals("0")) {
+                    textDown.setText("8");
+                } else {
+                    textDown.append("8");
                 }
             }
         });
@@ -135,10 +162,10 @@ public class MainActivity extends AppCompatActivity {
         b9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(text.getText().toString().equals("0")){
-                    text.setText("9");}
-                else{
-                    text.append("9");
+                if (textDown.getText().toString().equals("0")) {
+                    textDown.setText("9");
+                } else {
+                    textDown.append("9");
                 }
             }
         });
@@ -146,161 +173,188 @@ public class MainActivity extends AppCompatActivity {
         b0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!text.getText().toString().equals("0")){
-                    text.append("0");}
+                if (!textDown.getText().toString().equals("0")) {
+                    textDown.append("0");
+                }
             }
         });
 
         plus.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                    ValueOne = Double.parseDouble(text.getText().toString());
-                    mAddition = true;
-                    text.setText("0");
-                    mComa=false;
-
+                equals.setClickable(true);
+                ValueOne = Double.parseDouble(textDown.getText().toString());
+                textUp.setText(ValueOne +" + ");
+                textDown.setText("0");
+                op=1;
             }
         });
 
         min.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                ValueOne = Double.parseDouble(text.getText().toString());
-                mSubtract = true ;
-                text.setText("0");
-                mComa=false;
+                equals.setClickable(true);
+                ValueOne = Double.parseDouble(textDown.getText().toString());
+                textUp.setText(ValueOne +" - ");
+                textDown.setText("0");
+                op=2;
             }
         });
 
         mul.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                ValueOne = Double.parseDouble(text.getText().toString());
-                mMultiplication = true ;
-                text.setText("0");
-                mComa=false;
+                equals.setClickable(true);
+                ValueOne = Double.parseDouble(textDown.getText().toString());
+                textUp.setText(ValueOne +" * ");
+                textDown.setText("0");
+                op=3;
             }
         });
 
         div.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                ValueOne = Double.parseDouble(text.getText().toString());
-                mDivision = true ;
-                text.setText("0");
-                mComa=false;
+                equals.setClickable(true);
+                ValueOne = Double.parseDouble(textDown.getText().toString());
+                textUp.setText(ValueOne +" / ");
+                textDown.setText("0");
+                op=4;
             }
         });
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!text.getText().toString().equals("0")) {
-                    ValueOne = Double.parseDouble(text.getText().toString()) * (-1);
-                    text.setText(String.valueOf(ValueOne));
+                if(!textDown.getText().toString().equals("0")) {
+                    ValueOne = Double.parseDouble(textDown.getText().toString()) * (-1);
+                    textDown.setText(String.valueOf(ValueOne));
                 }
             }
         });
-
-        to2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                    ValueOne = Double.parseDouble(text.getText().toString());
-                    text.setText(String.valueOf(ValueOne*ValueOne));
-
-            }
-        });
-        to3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ValueOne = Double.parseDouble(text.getText().toString());
-                text.setText(String.valueOf(Math.pow(ValueOne,3)));
-
-            }
-        });
-
-        per.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ValueOne = Double.parseDouble(text.getText().toString());
-                mPer = true ;
-                text.setText("0");
-                mComa=false;
-            }
-        });
-        sqrt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ValueOne = Double.parseDouble(text.getText().toString());
-                text.setText(String.valueOf(Math.sqrt(ValueOne)));
-            }
-        });
-        log.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ValueOne = Double.parseDouble(text.getText().toString());
-                text.setText(String.valueOf(Math.log10(ValueOne)));
-            }
-        });
-
         equals.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                ValueTwo = Double.parseDouble(text.getText().toString());
-
-                if (mAddition){
-                    text.setText(String.valueOf(ValueOne+ValueTwo));
-                    mAddition=false;
-                    mComa = true;
+                equals.setClickable(false);
+                ValueTwo = Double.parseDouble(textDown.getText().toString());
+                if (op==1) {
+                    textUp.append(ValueTwo+"=");
+                    textDown.setText(String.valueOf(ValueOne + ValueTwo));
+                }
+                if (op==2) {
+                    textUp.append(ValueTwo+"=");
+                    textDown.setText(String.valueOf(ValueOne - ValueTwo));
                 }
 
-
-                if (mSubtract){
-                    text.setText(String.valueOf(ValueOne-ValueTwo));
-                    mSubtract=false;
-                    mComa = true;
+                if (op==3) {
+                    textUp.append(ValueTwo+"=");
+                    textDown.setText(String.valueOf(ValueOne *ValueTwo));
                 }
 
-                if (mMultiplication){
-                    text.setText(String.valueOf(ValueOne*ValueTwo));
-                    mMultiplication=false;
-                    mComa = true;
+                if (op==4) {
+                    textUp.append(ValueTwo+"=");
+                    textDown.setText(String.valueOf(ValueOne / ValueTwo));
                 }
-
-                if (mDivision){
-                    text.setText(String.valueOf(ValueOne/ValueTwo));
-                    mDivision=false;
-                    mComa = true;
-                }
-                if(mPer){
-                    text.setText(String.valueOf(ValueOne%ValueTwo));
-                    mPer=false;
-                    mComa = true;
+                if (op==5) {
+                    textUp.append(ValueTwo+"=");
+                    textDown.setText(String.valueOf(ValueOne % ValueTwo));
                 }
             }
         });
-
         ac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text.setText("0");
-                mComa=false;
-                mAddition=false;
-                mDivision=false;
-                mMultiplication=false;
-                mSubtract=false;
-                mPer=false;
+                textDown.setText("0");
+                textUp.setText("");
+                op=0;
             }
         });
 
         dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mComa) {
-                    text.append(".");
-                    mComa = true;
+                if (!textDown.getText().toString().contains(".")) {
+                    textDown.append(".");
                 }
+            }
+        });
+        per.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View v) {
+                equals.setClickable(true);
+                ValueOne = Double.parseDouble(textDown.getText().toString());
+                op = 5;
+                textUp.setText(ValueOne +"%");
+                textDown.setText("0");
+            }
+        });
+
+
+    }
+    private void landscapeButtons(){
+        to2.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View v) {
+                ValueOne = Double.parseDouble(textDown.getText().toString());
+                textUp.setText(ValueOne+"^2");
+                textDown.setText(String.valueOf(ValueOne * ValueOne));
 
             }
         });
+        to3.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View v) {
+                ValueOne = Double.parseDouble(textDown.getText().toString());
+                textUp.setText(ValueOne+"^3");
+                textDown.setText(String.valueOf(Math.pow(ValueOne, 3)));
+            }
+        });
+
+        sqrt.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View v) {
+                ValueOne = Double.parseDouble(textDown.getText().toString());
+                textUp.setText("sqrt("+ ValueOne +")");
+                textDown.setText(String.valueOf(Math.sqrt(ValueOne)));
+            }
+        });
+        log.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View v) {
+                ValueOne = Double.parseDouble(textDown.getText().toString());
+                textUp.setText("log10("+ ValueOne +")");
+                textDown.setText(String.valueOf(Math.log10(ValueOne)));
+            }
+        });
+        sil.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View v) {
+
+                int i=1, result=1;
+                int n=Math.round(Integer.parseInt(textDown.getText().toString()));
+                if(n<0){
+                    n=n*(-1);
+                }
+                while(i<=n){
+                    result*=i;
+                    i++;
+                }
+                textUp.setText(n +"!");
+                textDown.setText(String.valueOf(result));
+            }
+        });
+
     }
-    }
+}
+
+
