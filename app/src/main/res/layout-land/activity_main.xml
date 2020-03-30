@@ -16,6 +16,7 @@
         app:layout_constraintBottom_toTopOf="@+id/numberTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/sourcepro"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -26,6 +27,7 @@
         android:background="#DADADA"
         android:gravity="center"
         android:textSize="35sp"
+        android:fontFamily="@font/sourcepro"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
