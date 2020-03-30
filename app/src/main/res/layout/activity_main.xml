@@ -10,8 +10,8 @@
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="317dp"
-        android:layout_height="214dp"
+        android:layout_width="320dp"
+        android:layout_height="223dp"
 
         android:addStatesFromChildren="true"
         android:shrinkColumns="*"
@@ -165,35 +165,35 @@
 
     </TableLayout>
 
+
     <TextView
         android:id="@+id/secondNumber"
-        android:layout_width="323dp"
-        android:layout_height="89dp"
-        android:layout_marginTop="65dp"
+        android:layout_width="322dp"
+        android:layout_height="149dp"
+        android:fontFamily="@font/sourcepro"
         android:gravity="center"
         android:textColor="#818181"
         android:textSize="30sp"
-        android:fontFamily="@font/sourcepro"
         app:layout_constraintBottom_toTopOf="@+id/numberTextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
         android:id="@+id/numberTextView"
-        android:layout_width="330dp"
-        android:layout_height="171dp"
+        android:layout_width="325dp"
+        android:layout_height="160dp"
         android:background="#DADADA"
+        android:fontFamily="@font/sourcepro"
         android:gravity="center"
         android:textSize="35sp"
-        android:fontFamily="@font/sourcepro"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.986" />
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

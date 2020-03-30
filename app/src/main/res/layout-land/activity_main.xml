@@ -6,37 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/secondNumber"
-        android:layout_width="535dp"
-        android:layout_height="72dp"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:textColor="#818181"
-        app:layout_constraintBottom_toTopOf="@+id/numberTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:fontFamily="@font/sourcepro"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/numberTextView"
-        android:layout_width="534dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="72dp"
-        android:background="#DADADA"
-        android:gravity="center"
-        android:textSize="35sp"
-        android:fontFamily="@font/sourcepro"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="533dp"
-        android:layout_height="176dp"
+        android:layout_width="538dp"
+        android:layout_height="170dp"
 
         android:addStatesFromChildren="true"
         android:measureWithLargestChild="true"
@@ -215,5 +189,32 @@
         </TableRow>
 
     </TableLayout>
+
+    <TextView
+        android:id="@+id/secondNumber"
+        android:layout_width="535dp"
+        android:layout_height="72dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="#818181"
+        app:layout_constraintBottom_toTopOf="@+id/numberTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/sourcepro"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/numberTextView"
+        android:layout_width="537dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="72dp"
+        android:background="#DADADA"
+        android:fontFamily="@font/sourcepro"
+        android:gravity="center"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
